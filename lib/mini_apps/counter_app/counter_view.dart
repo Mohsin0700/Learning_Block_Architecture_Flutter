@@ -20,6 +20,7 @@ class _CounterAppState extends State<CounterApp> {
 
   @override
   Widget build(BuildContext context) {
+    print("Widget Build");
     return Scaffold(
       appBar: AppBar(
         title: Text('Counter App'),
@@ -39,7 +40,7 @@ class _CounterAppState extends State<CounterApp> {
       ),
       body: Center(
         child: BlocBuilder<CounterCubit, int>(
-          bloc: counterCubit,
+          // bloc: counterCubit,
           builder: (context, count) {
             return Column(
               children: [
@@ -49,10 +50,7 @@ class _CounterAppState extends State<CounterApp> {
                   style: TextStyle(fontSize: 100),
                 ),
                 Text('To', style: TextStyle(fontSize: 50)),
-                Text(
-                  counterCubit.state.toString(),
-                  style: TextStyle(fontSize: 100),
-                ),
+                Text(count.toString(), style: TextStyle(fontSize: 100)),
               ],
             );
           },
@@ -60,7 +58,7 @@ class _CounterAppState extends State<CounterApp> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          counterCubit.increment();
+          context.read<CounterCubit>().increment();
         },
         child: Icon(Icons.add),
       ),
