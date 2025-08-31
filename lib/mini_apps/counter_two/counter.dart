@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learning_block/mini_apps/counter_two/views/counter_page.dart';
 
-class Counter extends StatelessWidget {
-  const Counter({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+class Counter extends MaterialApp {
+  Counter({super.key}) : super(home: CounterPage());
 }

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_block/mini_apps/counter_app/counter_cubit.dart';
-import 'package:learning_block/mini_apps/counter_app/counter_view.dart';
+// import 'package:learning_block/mini_apps/counter_app/counter_view.dart';
 import 'package:learning_block/mini_apps/counter_two/counter.dart';
 import 'package:learning_block/mini_apps/counter_two/counter_observer.dart';
 
 void main() {
   Bloc.observer = CounterObserver();
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(Counter());
 }
 
 class MyApp extends StatelessWidget {
